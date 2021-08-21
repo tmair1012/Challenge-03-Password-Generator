@@ -3,6 +3,16 @@ var specialCharacters = " !$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 var alphabetLower = "abcdefghijklmnopqrstuvwxyz";
 var alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var Numbers = "0123456789";
+
+var upperLower = [alphabetLower, alphabetUpper];
+var upperLowerCharacters = [alphabetLower, alphabetUpper, specialCharacters];
+var upperLowerNumbers = [AlphabetLower, alphabetUpper, Numbers];
+var allCharacters = [specialCharacters, alphabetLower, alphabetUpper, Numbers];
+
+function generatePassword(){
+  allCharacters[Math.floor(Math.random()*allCharacters.length)];
+  alert (allCharacters);}
+  generatePassword();
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
