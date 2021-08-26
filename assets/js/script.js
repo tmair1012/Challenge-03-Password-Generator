@@ -1,25 +1,23 @@
 // Assignment code here
-var specialCharacters = "!$%&'()*+,-./:;<=>?@[^_`{|}~";
-var alphabetUpper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];;
-var alphabetLower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];;
-var Numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const passwordAdditions =[alphabetLower];
-var passwordLength = alphabetUpper.length;
+var specialCharacters = ("!$%&'()*+,-./:;<=>?@[^_`{|}~");
+var alphabetUpper = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+var alphabetLower = ("abcdefghijklmnopqrstuvwxyz");
+var Numbers = ("0123456789");
+var passwordAdditions ="abcdefghijklmnopqrstuvwxyz";
 var yourPassword =" ";
-var passwordCharacters = min = 8, max = 128;
+
 
 function generatePassword(){
-for (let i = 0; i < passwordLength.length; i++) {
+  for (let i = 0; i < passwordCharacters; i++) {
+    console.log(passwordAdditions.charAt(Math.random() * passwordAdditions.length));
+    
+  }
   
-  yourPassword += passwordAdditions.charAt(Math.floor(Math.random()
-  * passwordLength))
-  
-}
 }
 
 
-  console.log (alphabetLower);
-  var password = generatePassword();
+  
+  
   var passwordText = document.querySelector("#password");
   var generateBtn = document.querySelector("#generate");
   
@@ -35,21 +33,23 @@ for (let i = 0; i < passwordLength.length; i++) {
     passwordCharacters = window.prompt ("How many characters would you like in your password? (8-128)");
     if (passwordCharacters <=128 && passwordCharacters >=8){
 
-    var getUpper = window.confirm ("Would you like to add Uppercase letters to your password?");
+    var getUpper = window.confirm ("Would you like to add Uppercase letters to your password? Ok for 'yes' cancel for 'no'");
     if (getUpper){
-      passwordAdditions.push(alphabetUpper);
+      passwordAdditions+=alphabetUpper;
     }
     
-    var getNumbers = window.confirm ("Would you like to add Numbers to your password?");
+    var getNumbers = window.confirm ("Would you like to add Numbers to your password? Ok for 'yes' cancel for 'no'");
     if (getNumbers){
-      passwordAdditions.push(Numbers);
+      passwordAdditions+=Numbers;
     }
-    var getSpecialCharacters = window.confirm ("Would you like to add special characters to your password?");
+    var getSpecialCharacters = window.confirm ("Would you like to add special characters to your password? Ok for 'yes' cancel for 'no'");
     if (getSpecialCharacters) {
-      passwordAdditions.push(specialCharacters)
+      passwordAdditions+=specialCharacters;
     }
-    console.log(passwordAdditions);
-}
+    generatePassword();
+    var password = generatePassword();
+  
+  }
   else{
     alert ('please enter a number between 8 and 128')
   }
