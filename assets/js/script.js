@@ -22,6 +22,7 @@ function generatePassword() {
   var alphabetLower = "abcdefghijklmnopqrstuvwxyz";
   var Numbers = "0123456789";
   var passwordAdditions = "";
+  
 
   
   
@@ -46,9 +47,9 @@ function generatePassword() {
       if (getSpecialCharacters) {
         passwordAdditions += specialCharacters;
       }
-
+      var yourPassword = "";
       for (let i = 0; i < passwordCharacters; i++) {
-        var yourPassword = passwordAdditions.charAt(Math.floor(Math.random() * passwordAdditions.length));
+        yourPassword += passwordAdditions.charAt(Math.floor(Math.random() * passwordAdditions.length));
         
         console.log(yourPassword);
         
